@@ -35,24 +35,23 @@ Replace the underscore (`_`) with your account address from `config.yaml`:
 [addresses]
 hello_blockchain = "address"
 
+```
 
-
-⸻
 
 🛠️ Build & Test
 
 ✅ Compile the Code
-
+```shell
 aptos move compile
-
+```
 
 
 ⸻
 
 ✅ Run Unit Tests
-
+```shell
 aptos move test
-
+```
 This runs any #[test] functions inside your module (e.g. sender_can_set_message).
 
 ⸻
@@ -60,9 +59,9 @@ This runs any #[test] functions inside your module (e.g. sender_can_set_message)
 🚀 Deploy to Movement Testnet
 
 Make sure your config.yaml is correctly set up (see below), then:
-
+```shell
 aptos move publish --profile default
-
+```
 This deploys the module to the Movement Testnet using your keys and URL.
 
 ⸻
@@ -70,31 +69,30 @@ This deploys the module to the Movement Testnet using your keys and URL.
 💬 Interact with Your Module
 
 📝 Set a Message
-
+```shell
 aptos move run \
   --function hello_blockchain::message::set_message \
   --args string:"Hello from CLI" \
   --profile default
 
-
+```
 
 ⸻
 
 🔍 Get the Current Message
-
+```shell
 aptos move view \
   --function hello_blockchain::message::get_message \
   --args address:address \
   --profile default
-
-
+```
 
 ⸻
 
 ⚙️ Config File (config.yaml)
 
 Ensure your config.yaml looks like this:
-
+```shell
 profiles:
   default:
     network: movement-testnet
@@ -103,12 +101,11 @@ profiles:
     account: <YOUR-ACCOUNT-ADDRESS>
     rest_url: "https://testnet.bardock.movementnetwork.xyz/v1"
     faucet_url: "https://faucet.testnet.bardock.movementnetwork.xyz/"
+```
 
+⸻ 
 
-
-⸻
-
-🧪 Writing Tests
+### 🧪 Writing Tests
 
 Use test-only functions with the #[test] attribute. Example:
 
