@@ -1,4 +1,4 @@
-# 🚀 Hello Blockchain - Move Language Project
+# Move Language 
 
 A simple Move smart contract to store and update a message on the Aptos-based Movement Testnet.
 
@@ -46,7 +46,7 @@ aptos move compile
 ```
 
 
-⸻
+---
 
 ✅ Run Unit Tests
 ```shell
@@ -54,7 +54,7 @@ aptos move test
 ```
 This runs any #[test] functions inside your module (e.g. sender_can_set_message).
 
-⸻
+---
 
 🚀 Deploy to Movement Testnet
 
@@ -64,7 +64,7 @@ aptos move publish --profile default
 ```
 This deploys the module to the Movement Testnet using your keys and URL.
 
-⸻
+---
 
 💬 Interact with Your Module
 
@@ -77,7 +77,7 @@ aptos move run \
 
 ```
 
-⸻
+---
 
 🔍 Get the Current Message
 ```shell
@@ -87,7 +87,7 @@ aptos move view \
   --profile default
 ```
 
-⸻
+---
 
 ⚙️ Config File (config.yaml)
 
@@ -103,7 +103,7 @@ profiles:
     faucet_url: "https://faucet.testnet.bardock.movementnetwork.xyz/"
 ```
 
-⸻ 
+---
 
 ### 🧪 Writing Tests
 
@@ -114,4 +114,3 @@ public entry fun sender_can_set_message(account: signer) {
     // Test logic here
 }
 
-⸻
