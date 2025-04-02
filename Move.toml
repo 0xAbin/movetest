@@ -1,0 +1,16 @@
+[package]
+name = "HelloBlockchainExample"
+version = "1.0.0"
+authors = []
+
+[addresses]
+hello_blockchain = "0x8399be325825388504ec0a5358b5615774cdb3e88210693428b861bc015558c6"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]

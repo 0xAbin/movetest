@@ -1,0 +1,9 @@
+---
+profiles:
+  default:
+    network: movement-testnet
+    private_key: 
+    public_key: 
+    account: 
+    rest_url: "https://testnet.bardock.movementnetwork.xyz/v1"
+    faucet_url: "https://faucet.testnet.bardock.movementnetwork.xyz/"
