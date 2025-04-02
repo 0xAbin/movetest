@@ -1,42 +1,51 @@
+# 🚀 Hello Blockchain - Move Language Project
 
-# Move Language 
+A simple Move smart contract to store and update a message on the Aptos-based Movement Testnet.
+
 ---
 
 ## 📁 Project Structure
 
 movetest/
 ├── sources/
-│   └── hello_blockchain.move
-├── tests/
-├── scripts/
-├── Move.toml
-├── config.yaml
-└── README.md
+│   └── hello_blockchain.move      # Main module
+├── tests/                         # Test files (if any)
+├── scripts/                       # Optional Move scripts
+├── Move.toml                      # Project manifest
+├── config.yaml                    # CLI config for deployment
+└── README.md                      # Project documentation
 
 ---
 
 ## ⚙️ Prerequisites
 
-- [Install Aptos CLI](https://aptos.dev/tools/cli/install-cli/)
-- Node with Move and Git installed
+- ✅ [Install Aptos CLI](https://aptos.dev/tools/cli/install-cli/)
+- ✅ Git
+- ✅ (Optional) Node.js if planning to interact via JS or scripts
 
 ---
 
 ## 🔧 Setup
 
-### 1. Update `Move.toml` with your address
+### 1. Update `Move.toml` with Your Blockchain Address
 
-Replace the underscore with your account address from `config.yaml`:
+Replace the underscore (`_`) with your account address from `config.yaml`:
 
 ```toml
 [addresses]
 hello_blockchain = "address"
 
+
+
 ⸻
 
-🛠️ Compile the Code
+🛠️ Build & Test
+
+✅ Compile the Code
 
 aptos move compile
+
+
 
 ⸻
 
@@ -44,24 +53,30 @@ aptos move compile
 
 aptos move test
 
-This runs the test function sender_can_set_message.
+This runs any #[test] functions inside your module (e.g. sender_can_set_message).
 
 ⸻
 
-🚀 Publish Module to Testnet
+🚀 Deploy to Movement Testnet
+
+Make sure your config.yaml is correctly set up (see below), then:
 
 aptos move publish --profile default
 
-Uses your config.yaml to deploy to Movement Testnet.
+This deploys the module to the Movement Testnet using your keys and URL.
 
 ⸻
 
-📝 Set a Message (Entry Function)
+💬 Interact with Your Module
+
+📝 Set a Message
 
 aptos move run \
   --function hello_blockchain::message::set_message \
   --args string:"Hello from CLI" \
   --profile default
+
+
 
 ⸻
 
@@ -72,11 +87,13 @@ aptos move view \
   --args address:address \
   --profile default
 
+
+
 ⸻
 
-📄 Config File (config.yaml)
+⚙️ Config File (config.yaml)
 
-Your config.yaml should contain:
+Ensure your config.yaml looks like this:
 
 profiles:
   default:
@@ -87,10 +104,17 @@ profiles:
     rest_url: "https://testnet.bardock.movementnetwork.xyz/v1"
     faucet_url: "https://faucet.testnet.bardock.movementnetwork.xyz/"
 
+
+
 ⸻
 
-🧪 Testing Accounts
+🧪 Writing Tests
 
-Use the #[test(account = @0x1)] syntax to create test-only functions inside your module.
+Use test-only functions with the #[test] attribute. Example:
+
+#[test(account = @0x1)]
+public entry fun sender_can_set_message(account: signer) {
+    // Test logic here
+}
 
 ⸻
