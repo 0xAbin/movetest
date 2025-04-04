@@ -4,7 +4,7 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-token_coin = "0x8399be325825388504ec0a5358b5615774cdb3e88210693428b861bc015558c6"
+my_token = "0x8399be325825388504ec0a5358b5615774cdb3e88210693428b861bc015558c6"
 
 [dev-addresses]
 
